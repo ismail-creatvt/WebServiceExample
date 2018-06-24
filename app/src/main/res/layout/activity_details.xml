@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        tools:context=".activity.DetailsActivity">
+
+        <ImageView
+            android:id="@+id/movie_detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_marginBottom="30dp"/>
+
+        <TextView
+            android:id="@+id/movie_detail_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            android:textSize="20sp"
+            android:gravity="center_vertical|right"
+            android:fontFamily="@font/notoserif"
+            android:layout_below="@id/movie_detail_image"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/movie_detail_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="name"
+            android:textSize="18sp"
+            android:fontFamily="@font/cunia"
+            android:layout_below="@id/movie_detail_bio"/>
+
+        <TextView
+            android:id="@+id/movie_detail_real_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="real name"
+            android:textSize="18sp"
+            android:fontFamily="@font/cunia"
+            android:layout_below="@id/movie_detail_name"/>
+
+        <TextView
+            android:id="@+id/movie_detail_team"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Team"
+            android:textSize="18sp"
+            android:fontFamily="@font/cunia"
+            android:layout_below="@id/movie_detail_real_name"/>
+
+        <TextView
+            android:id="@+id/movie_detail_first_appearance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="First Appearance"
+            android:textSize="18sp"
+            android:fontFamily="@font/cunia"
+            android:layout_below="@id/movie_detail_team"/>
+
+        <TextView
+            android:id="@+id/movie_detail_created_by"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="bio"
+            android:textSize="18sp"
+            android:fontFamily="@font/cunia"
+            android:layout_below="@id/movie_detail_first_appearance"/>
+
+        <TextView
+            android:id="@+id/movie_detail_publisher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="bio"
+            android:textSize="18sp"
+            android:fontFamily="@font/cunia"
+            android:layout_below="@id/movie_detail_created_by"/>
+
+    </RelativeLayout>
+</ScrollView>
