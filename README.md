@@ -1,6 +1,7 @@
 ![](app/src/main/logo-web.png&s=120)
 <img src="app/src/main/logo-web.png" width="200">
 # WebServiceExample
+<a href="WebServiceExample.apk" download>Click to Download the APK file!</a>
 #### **Hi!,**  
 I am Ismail. This is my first repository. I've just started to explore the world of android development and I'm already loving it. I have created this pretty basic app just for learning purpose. It uses rest api client [**Retrofit**](http://square.github.io/retrofit/) to retreive data from the internet and display it in the app.  
 The app is divided in two parts.  
