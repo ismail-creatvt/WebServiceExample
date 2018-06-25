@@ -40,13 +40,13 @@ public class DetailsActivity extends AppCompatActivity {
         txtBio = findViewById(R.id.movie_detail_bio);
 
         Glide.with(this).load(imageUrl).into(imgMovie);
-        txtName.setText("Name                                " + name);
+        txtName.setText(name);
         txtBio.setText(bio);
-        txtPublisher.setText("Publisher                           " + publisher);
-        txtCreatedBy.setText("Created By                          " + createdBy);
-        txtFirstAppearance.setText("First Appearance                    " + firstAppearance);
-        txtRealName.setText("Real Name                           " + realName);
-        txtTeam.setText("Team                                " + team);
+        txtPublisher.setText(publisher);
+        txtCreatedBy.setText(createdBy);
+        txtFirstAppearance.setText(firstAppearance);
+        txtRealName.setText(realName);
+        txtTeam.setText(team);
 
     }
 }

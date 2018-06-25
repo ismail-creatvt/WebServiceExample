@@ -38,6 +38,7 @@ public class RouteDistance extends AppCompatActivity implements AdapterView.OnIt
     private CardView searchBtn;
     private ProgressBar progress;
     private Spinner travelMode;
+    private APIInterface service;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,11 +78,12 @@ public class RouteDistance extends AppCompatActivity implements AdapterView.OnIt
 
                 String source = txtSource.getText().toString().trim();
                 String destination = txtDestination.getText().toString().trim();
-                String selected = travelMode.getSelectedItem().toString();
+                String selected = travelMode.getSelectedItem().toString().toLowerCase();
                 Log.i("SELECTED ITEM",selected);
                 String url = AppConstant.BASE_URL + source + AppConstant.DESTINATION + destination + AppConstant.MODE + selected + AppConstant.ALTERNATIVES + "&key=" + AppConstant.DIRECTION_API_KEY;
 
-                APIInterface service = APIClient.getClient().create(APIInterface.class);
+                Log.i("URL",url);
+                service = APIClient.getClient().create(APIInterface.class);
 
                 Call<DirectionResponse> call = service.getDirectionData(url);
 
