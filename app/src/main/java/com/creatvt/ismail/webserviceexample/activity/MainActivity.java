@@ -1,6 +1,8 @@
 package com.creatvt.ismail.webserviceexample.activity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -43,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
                 List<Movie> movie = response.body();
                 MovieAdapter adapter = new MovieAdapter(movie,MainActivity.this,new ViewClickListener(){
-                    public void onClick(Movie movie){
-                        showDetails(movie);
+                    public void onClick(Movie movie,View view){
+                        showDetails(movie,view);
                     }
                 });
                 RecyclerView rvMovieList = findViewById(R.id.movie_list);
@@ -54,8 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
             }
 
-            public void showDetails(Movie movie){
+            public void showDetails(Movie movie,View view){
                 Intent intent = new Intent(MainActivity.this,DetailsActivity.class);
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this,view.findViewById(R.id.image_movie),"image");
                 intent.putExtra("name",movie.getName());
                 intent.putExtra("real_name",movie.getRealname());
                 intent.putExtra("team",movie.getTeam());
@@ -65,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("created_by",movie.getCreatedby());
                 intent.putExtra("image_url",movie.getImageurl());
 
-                startActivity(intent);
+                startActivity(intent,options.toBundle());
             }
             @Override
             public void onFailure(Call<List<Movie>> call, Throwable t) {
@@ -73,4 +76,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }

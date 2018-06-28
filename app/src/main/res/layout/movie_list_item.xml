@@ -13,7 +13,8 @@
             android:layout_height="96dp"
             android:layout_marginRight="20dp"
             android:src="@drawable/ic_launcher_background"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop"
+            android:transitionName="image"/>
 
         <TextView
             android:layout_marginTop="5dp"

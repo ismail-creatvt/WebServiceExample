@@ -64,7 +64,6 @@ public class RouteDistance extends AppCompatActivity implements AdapterView.OnIt
             @Override
             public void onClick(View view) {
 
-                progress.setVisibility(View.VISIBLE);
                 if(TextUtils.isEmpty(txtSource.getText()))
                 {
                     showToast("Enter Source");
@@ -75,6 +74,8 @@ public class RouteDistance extends AppCompatActivity implements AdapterView.OnIt
                     showToast("Enter Destination");
                     return;
                 }
+
+                progress.setVisibility(View.VISIBLE);
 
                 String source = txtSource.getText().toString().trim();
                 String destination = txtDestination.getText().toString().trim();

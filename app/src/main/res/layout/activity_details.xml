@@ -14,7 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_launcher_background"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="30dp"
+            android:transitionName="image"/>
 
         <com.uncopt.android.widget.text.justify.JustifiedTextView
             android:id="@+id/movie_detail_bio"

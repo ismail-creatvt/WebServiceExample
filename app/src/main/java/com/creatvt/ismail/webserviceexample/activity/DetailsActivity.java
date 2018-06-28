@@ -1,12 +1,19 @@
 package com.creatvt.ismail.webserviceexample.activity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.Target;
 import com.creatvt.ismail.webserviceexample.R;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -19,6 +26,7 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
+        supportPostponeEnterTransition();
         Intent intent = getIntent();
 
         imageUrl = intent.getStringExtra("image_url");
@@ -39,7 +47,22 @@ public class DetailsActivity extends AppCompatActivity {
         txtFirstAppearance = findViewById(R.id.movie_detail_first_appearance);
         txtBio = findViewById(R.id.movie_detail_bio);
 
-        Glide.with(this).load(imageUrl).into(imgMovie);
+        Glide.with(this).load(imageUrl).apply(new RequestOptions().dontAnimate()).listener(new RequestListener<Drawable>(){
+
+            @Override
+            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                startPostponedEnterTransition();
+                return false;
+            }
+
+            @Override
+            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target target, boolean isFirstResource) {
+                startPostponedEnterTransition();
+                return false;
+            }
+
+
+        }).into(imgMovie);
         txtName.setText(name);
         txtBio.setText(bio);
         txtPublisher.setText(publisher);
